@@ -1,18 +1,16 @@
 <template>
-  <div>hi</div>
-  <Evelyn />
+  <div>
+    <router-link to="/">第一个</router-link>
+    <router-link to="/xxx">第二个</router-link>
+  </div>
+  <router-view />
 </template>
 
 <script>
-import Evelyn from './components/Evelyn.vue'
 
 
 export default {
   name: 'App',
-  components: {
-    //标签：组件
-    Evelyn: Evelyn
 
-  }
 }
 </script>
