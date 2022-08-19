@@ -6,8 +6,8 @@
             <h1>星星UI</h1>
             <h2>一个厉害的 UI 框架</h2>
             <p class="actions">
-                <a href="">GitHub</a>
-                <a href="">start</a>
+                <a href="https://github.com/EvelynWXY/xingzi-ui">GitHub</a>
+                <router-link to="/doc">start</router-link>
             </p>
         </div>
     </div>
