@@ -1,5 +1,5 @@
 <template>
     <div>
-        Switch 组件
+        <button><span></span></button>
     </div>
 </template>
