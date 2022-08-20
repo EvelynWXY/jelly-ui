@@ -18,6 +18,8 @@ export default {
     router.afterEach(() => {
       if (width <= 500) {
         asideVisible.value = false
+        // console.log('路由器切换了');
+
       }
 
     })
