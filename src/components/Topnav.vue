@@ -1,12 +1,15 @@
 <template>
     <div class="topnav">
-        <div class="logo">LOGO</div>
+        <router-link to="/">
+            <img class="logo" src="../assets/star2.svg" />
+        </router-link>
+
 
         <ul class="menu">
             <li>菜单1</li>
             <li>菜单2</li>
         </ul>
-        <span class="toggleAside" @click="toggleAside"></span>
+        <img class="toggleAside" @click="toggleAside" src="../assets/types.svg" alt="" />
     </div>
 </template>
 <script lang="ts">
@@ -33,10 +36,20 @@ export default {
     justify-content: center;
     align-items: center;
 
-    >.logo {
-        max-width: 6em;
+    >a {
         margin-right: auto;
+
+        >.logo {
+            max-width: 6em;
+
+            width: 30px;
+            height: 30px;
+
+
+        }
     }
+
+
 
     >.menu {
         display: flex;
@@ -51,7 +64,6 @@ export default {
     .toggleAside {
         width: 24px;
         height: 24px;
-        background: red;
         position: absolute;
         left: 16px;
         top: 50%;
@@ -64,8 +76,9 @@ export default {
             display: none;
         }
 
-        >.logo {
-            margin: 0 auto
+        >a {
+            margin: 0 auto;
+
         }
 
         >.toggleAside {
