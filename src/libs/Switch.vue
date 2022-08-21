@@ -13,8 +13,9 @@ export default {
     setup(props, context) {
         const toggle = () => {
             // toggle 的作用就是把当前的值取反通过 input 事件发给外面
-
-            context.emit('input', !props.value)
+            // Vue3 中 emit 的第一个参数要与 props 里数据名称一致
+            context.emit('update:value', !props.value)
+            // context.emit('input', !props.value)
 
         }
         return { toggle }
