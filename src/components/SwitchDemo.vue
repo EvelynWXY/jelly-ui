@@ -5,9 +5,11 @@
 </template>
 
 <script lang="ts">
+
 import Switch from '../libs/Switch.vue'
 export default {
-    components: { Switch }
+    components: { Switch },
+
 }
 </script>
 <style lang="scss" scoped>
