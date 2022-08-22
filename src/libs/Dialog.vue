@@ -1,23 +1,34 @@
 <template>
-    <div class="xingzi-dialog-overlay"></div>
-    <div class="xingzi-dialog-wrapper">
-        <div class="xingzi-dialog">
-            <header>标题 <span class="xingzi-dialog-close"></span> </header>
-            <main>
-                <p>第一行字</p>
-                <p>第二行字</p>
-            </main>
-            <footer>
-                <Button level="main">OK</Button>
-                <Button>Cancel</Button>
-            </footer>
+    <template v-if="visible">
+        <div class="xingzi-dialog-overlay"></div>
+        <div class="xingzi-dialog-wrapper">
+            <div class="xingzi-dialog">
+                <header>标题 <span class="xingzi-dialog-close"></span> </header>
+                <main>
+                    <p>第一行字</p>
+                    <p>第二行字</p>
+                </main>
+                <footer>
+                    <Button level="main">OK</Button>
+                    <Button>Cancel</Button>
+                </footer>
+            </div>
         </div>
-    </div>
+
+    </template>
+
 </template>
 <script lang="ts">
 import Button from './Button.vue';
 export default {
-    components: { Button }
+    props: {
+        visible: {
+            type: Boolean,
+            default: false
+        }
+    },
+    components: { Button },
+
 }
 </script>
 <style lang="scss">
