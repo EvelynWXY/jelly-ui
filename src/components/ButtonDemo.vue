@@ -1,12 +1,18 @@
 <template>
     <div>
-        <div>Button 示例</div>
+        <div>Button 按钮示例</div>
         <h1>示例1</h1>
         <div>
             <Button>你好</Button>
             <Button theme="button">你好</Button>
             <Button theme="link">你好</Button>
             <Button theme="text">你好</Button>
+        </div>
+        <h1>示例2</h1>
+        <div>
+            <Button size="big">大大大大</Button>
+            <Button size="normal">普普通通</Button>
+            <Button size="small">小小小小</Button>
         </div>
     </div>
 </template>
