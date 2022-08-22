@@ -1,3 +1,4 @@
+
 <template>
     <div>
         <div>Button 按钮示例</div>
@@ -49,19 +50,22 @@
         <h1>示例5</h1>
         <div>
             <Button loading>加载中</Button>
+            <Button @click="onClick" :loading="isLoading">Click me</Button>
         </div>
     </div>
 </template>
 <script lang="ts">
 import Button from '../libs/Button.vue'
+import { ref } from 'vue'
 export default {
     components: { Button },
     setup() {
+        const isLoading = ref(false)
         const onClick = () => {
-            console.log('hi');
+            isLoading.value = !isLoading.value
 
         }
-        return { onClick }
+        return { onClick, isLoading }
     }
 }
 </script>
