@@ -56,5 +56,27 @@ $radius: 4px;
     &::-moz-focus-inner {
         border: 0;
     }
+
+    &.xingzi-theme-link {
+        border-color: transparent;
+        box-shadow: none;
+        color: $blue;
+
+        &:hover,
+        &:focus {
+            color: lighten($color: $blue, $amount: 10%);
+        }
+    }
+
+    &.xingzi-theme-text {
+        border-color: transparent;
+        box-shadow: none;
+        color: inherit;
+
+        &:hover,
+        &:focus {
+            background: darken($color: white, $amount: 5%);
+        }
+    }
 }
 </style>
