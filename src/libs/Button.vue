@@ -1,6 +1,6 @@
 <template>
 
-    <button class="xingzi-button" :class="classes">
+    <button class="xingzi-button" :class="classes" :disabled="disabled">
         <slot />
     </button>
 
@@ -21,6 +21,10 @@ export default {
         level: {
             type: String,
             default: 'normal'
+        },
+        disabled: {
+            type: Boolean,
+            default: false
         }
     },
     setup(props) {
@@ -43,6 +47,7 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $red: red;
+$grey: grey;
 $radius: 4px;
 
 .xingzi-button {
@@ -171,5 +176,23 @@ $radius: 4px;
         }
     }
 
+    &.xingzi-theme-button {
+        &[disabled] {
+            cursor: not-allowed;
+            color: $grey;
+
+            &:hover {
+                border-color: $grey;
+            }
+        }
+    }
+
+    &.xingzi-theme-link,
+    &.xingzi-theme-text {
+        &[disabled] {
+            cursor: not-allowed;
+            color: $grey;
+        }
+    }
 }
 </style>
