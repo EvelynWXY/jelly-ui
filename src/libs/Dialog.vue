@@ -3,10 +3,11 @@
         <div class="xingzi-dialog-overlay" @click="onClickOverlay"></div>
         <div class="xingzi-dialog-wrapper">
             <div class="xingzi-dialog">
-                <header>标题 <span @click="close" class="xingzi-dialog-close"></span> </header>
+                <header>
+                    <slot name="title" /><span @click="close" class="xingzi-dialog-close"></span>
+                </header>
                 <main>
-                    <p>第一行字</p>
-                    <p>第二行字</p>
+                    <slot name="content" />
                 </main>
                 <footer>
                     <Button level="main" @click="ok">OK</Button>
@@ -53,6 +54,7 @@ export default {
             }
         }
         const cancel = () => {
+            context.emit('cancel')
             close()
         }
         return { close, onClickOverlay, ok, cancel }
