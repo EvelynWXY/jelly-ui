@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="topnavAndBanner">
         <Topnav />
 
         <div class="banner">
@@ -22,13 +22,18 @@ export default {
 }
 </script>
 <style scoped lang="scss" >
+.topnavAndBanner {
+    background: rgb(240, 203, 219);
+    background: radial-gradient(circle, rgba(240, 203, 219, 1) 0%, rgba(194, 214, 238, 1) 100%);
+}
+
 .banner {
     padding: 100px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: lightgreen;
+
 
     >.actions {
         padding: 8px 0;
