@@ -1,7 +1,7 @@
 <template>
     <div class="topnav">
         <router-link to="/">
-            <img class="logo" src="../assets/star2.svg" />
+            <img class="logo" src="../assets/Sweetquan.svg" />
         </router-link>
 
 
@@ -27,6 +27,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$color: #4e6c60;
+
 .topnav {
     // background: pink;
     display: flex;
@@ -38,6 +40,7 @@ export default {
     z-index: 10;
     justify-content: center;
     align-items: center;
+    color: $color;
 
     >a {
         margin-right: auto;
@@ -45,8 +48,8 @@ export default {
         >.logo {
             max-width: 6em;
 
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
 
 
         }

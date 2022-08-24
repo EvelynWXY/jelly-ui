@@ -1,14 +1,27 @@
 <template>
-    <div class="topnavAndBanner">
-        <Topnav />
+    <div>
+        <div class="topnavAndBanner">
+            <Topnav />
 
-        <div class="banner">
-            <h1>星星UI</h1>
-            <h2>一个厉害的 UI 框架</h2>
-            <p class="actions">
-                <a href="https://github.com/EvelynWXY/xingzi-ui">GitHub</a>
-                <router-link to="/doc">start</router-link>
-            </p>
+            <div class="banner">
+                <h1>星星UI</h1>
+                <h2>一个厉害的 UI 框架</h2>
+                <p class="actions">
+                    <a href="https://github.com/EvelynWXY/xingzi-ui">GitHub</a>
+                    <router-link to="/doc">start</router-link>
+                </p>
+            </div>
+        </div>
+        <div class="features">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-Vue"></use>
+            </svg>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-typescript-def"></use>
+            </svg>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-linggan"></use>
+            </svg>
         </div>
     </div>
 </template>
@@ -22,9 +35,22 @@ export default {
 }
 </script>
 <style scoped lang="scss" >
+$pink: #e8ddf8;
+$border-radius: 28px;
+
+// $color: #567569;
+$color: #4e6c60;
+
 .topnavAndBanner {
     background: rgb(240, 203, 219);
     background: radial-gradient(circle, rgba(240, 203, 219, 1) 0%, rgba(194, 214, 238, 1) 100%);
+}
+
+.features {
+    >svg {
+        width: 64px;
+        height: 64px;
+    }
 }
 
 .banner {
@@ -33,6 +59,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: $color;
 
 
     >.actions {
@@ -40,13 +67,15 @@ export default {
 
         a {
             margin: 0 8px;
-            background: #fff;
+            background: #e8ddf8;
             display: inline-block;
-            $h: 28px;
-            height: $h;
-            line-height: $h;
-            border-radius: $h/2;
-            padding: 0 8px;
+            border-radius: $border-radius;
+            padding: 8px 24px;
+            color: $color;
+
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
 }
