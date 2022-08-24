@@ -1,9 +1,9 @@
 <template>
     <div class="xingzi-tabs">
-        <div class="xingzi-tabs-nav">
-            <div class="xingzi-tabs-nav-item" v-for="(t, index) in titles" @click="select(t)"
-                :class="{ selected: t === selected }" :key="index">{{ t }}</div>
-            <div class="xingzi-tabs-nav-indicator"></div>
+        <div class="xingzi-tabs-nav" ref="container">
+            <div class="xingzi-tabs-nav-item" v-for="(t, index) in titles" :ref="el => { if (el) navItems[index] = el }"
+                @click="select(t)" :class="{ selected: t === selected }" :key="index">{{ t }}</div>
+            <div class="xingzi-tabs-nav-indicator" ref="indicator"></div>
         </div>
         <div class="xingzi-tabs-content">
             <!-- <component class="xingzi-tabs-content-item"
@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, onUpdated, ref } from 'vue'
 import Tab from './Tab.vue'
 export default {
     props: {
@@ -24,6 +24,22 @@ export default {
         }
     },
     setup(props, context) {
+        const navItems = ref<HTMLDivElement[]>([]) //<> 里是 TypeScript 的参数,TypeScript 的泛型语法
+        const indicator = ref<HTMLDivElement>(null)
+        const container = ref<HTMLDivElement>(null)
+        const x = () => {
+            const divs = navItems.value
+            const result = divs.filter(div => div.classList.contains('selected'))[0]
+            const { width } = result.getBoundingClientRect()
+            indicator.value.style.width = width + 'px'
+            const { left: left1 } = container.value.getBoundingClientRect()
+            const { left: left2 } = result.getBoundingClientRect()
+            const left = left2 - left1
+            indicator.value.style.left = left + 'px'
+        }
+        //只在第一次渲染执行
+        onMounted(x)
+        onUpdated(x)
         const defaults = context.slots.default()
         // console.log(defaults[0].type === Tab);
         defaults.forEach((tag) => {
@@ -46,7 +62,15 @@ export default {
         }
 
 
-        return { defaults, titles, current, select }
+        return {
+            defaults,
+            titles,
+            current,
+            select,
+            navItems,
+            indicator,
+            container
+        }
     }
 }
 </script>
@@ -84,6 +108,7 @@ $border-color: #d9d9d9;
             bottom: -1px;
             background: $blue;
             width: 100px;
+            transition: all 250ms;
         }
     }
 
