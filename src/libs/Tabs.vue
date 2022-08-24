@@ -1,21 +1,28 @@
 <template>
     <div class="xingzi-tabs">
         <div class="xingzi-tabs-nav">
-            <div class="xingzi-tabs-nav-item" v-for="(t, index) in titles" :key="index">{{ t }}</div>
+            <div class="xingzi-tabs-nav-item" v-for="(t, index) in titles" @click="select(t)"
+                :class="{ selected: t === selected }" :key="index">{{ t }}</div>
 
         </div>
         <div class="xingzi-tabs-content">
-            <component class="xingzi-tabs-content-item" v-for="(c, index) in defaults" :is="c" :key="index" />
-
+            <!-- <component class="xingzi-tabs-content-item"
+             v-for="(c, index) in defaults" :is="c" :key="index" /> -->
+            <component class="xingzi-tabs-content-item" :is="current" :key="current.props.title" />
         </div>
 
     </div>
 </template>
 
 <script lang="ts">
-import { title } from 'process'
+import { computed } from 'vue'
 import Tab from './Tab.vue'
 export default {
+    props: {
+        selected: {
+            type: String
+        }
+    },
     setup(props, context) {
         const defaults = context.slots.default()
         // console.log(defaults[0].type === Tab);
@@ -24,13 +31,22 @@ export default {
                 throw new Error('Tab 子标签必须是 Tab')
             }
         })
+        const current = computed(() => {
+
+            return defaults.filter((tag) => {
+                return tag.props.title === props.selected
+            })[0]
+        })
         const titles = defaults.map((tag) => {
             return tag.props.title;
 
         })
+        const select = (title: String) => {
+            context.emit('update:selected', title)
+        }
 
 
-        return { defaults, titles }
+        return { defaults, titles, current, select }
     }
 }
 </script>
