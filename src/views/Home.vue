@@ -44,6 +44,11 @@ $color: #4e6c60;
 .topnavAndBanner {
     background: rgb(240, 203, 219);
     background: radial-gradient(circle, rgba(240, 203, 219, 1) 0%, rgba(194, 214, 238, 1) 100%);
+    // border-bottom-left-radius: 190px 40px;
+    // border-bottom-right-radius: 190px 40px;
+    // border-top-left-radius: 190px 40px;
+    // border-top-right-radius: 190px 40px;
+    clip-path: ellipse(80% 60% at 50% 40%);
 }
 
 .features {
