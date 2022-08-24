@@ -3,7 +3,7 @@
         <div class="xingzi-tabs-nav">
             <div class="xingzi-tabs-nav-item" v-for="(t, index) in titles" @click="select(t)"
                 :class="{ selected: t === selected }" :key="index">{{ t }}</div>
-
+            <div class="xingzi-tabs-nav-indicator"></div>
         </div>
         <div class="xingzi-tabs-content">
             <!-- <component class="xingzi-tabs-content-item"
@@ -61,6 +61,7 @@ $border-color: #d9d9d9;
         display: flex;
         color: $color;
         border-bottom: 1px solid $border-color;
+        position: relative;
 
         &-item {
             padding: 8px 0;
@@ -74,6 +75,15 @@ $border-color: #d9d9d9;
             &.selected {
                 color: $blue;
             }
+        }
+
+        &-indicator {
+            position: absolute;
+            height: 3px;
+            left: 0;
+            bottom: -1px;
+            background: $blue;
+            width: 100px;
         }
     }
 
