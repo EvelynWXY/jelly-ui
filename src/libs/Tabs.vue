@@ -3,7 +3,8 @@
         <div class="xingzi-tabs-nav" ref="container">
             <div class="xingzi-tabs-nav-item" v-for="(t, index) in titles"
                 :ref="el => { if (t === selected) selectedItem = el }" @click="select(t)"
-                :class="{ selected: t === selected }" :key="index">{{ t }}</div>
+                :class="{ selected: t === selected }" :key="index">
+                {{ t }}</div>
             <div class="xingzi-tabs-nav-indicator" ref="indicator"></div>
         </div>
         <div class="xingzi-tabs-content">
@@ -64,6 +65,7 @@ export default {
         }
 
 
+
         return {
             defaults,
             titles,
@@ -71,7 +73,8 @@ export default {
             select,
             selectedItem,
             indicator,
-            container
+            container,
+
         }
     }
 }
