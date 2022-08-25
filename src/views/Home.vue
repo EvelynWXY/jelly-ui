@@ -4,11 +4,11 @@
             <Topnav />
 
             <div class="banner">
-                <h1>星星UI</h1>
+                <h1>果冻 UI</h1>
                 <h2>一个厉害的 UI 框架</h2>
                 <p class="actions">
                     <a href="https://github.com/EvelynWXY/xingzi-ui">GitHub</a>
-                    <router-link to="/doc">start</router-link>
+                    <router-link to="/doc/get-started">start</router-link>
                 </p>
             </div>
         </div>
