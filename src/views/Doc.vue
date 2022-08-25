@@ -15,7 +15,10 @@
                     <li>
                         <router-link to="/doc/get-started">快速上手</router-link>
                     </li>
-                    <h2>组件列表</h2>
+                </ol>
+                <h2>组件列表</h2>
+
+                <ol>
                     <li>
                         <router-link to="/doc/switch">Switch 组件</router-link>
                     </li>
@@ -51,10 +54,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.router-link-active {
-    text-decoration: underline;
-}
-
 .layout {
     display: flex;
     flex-direction: column;
@@ -91,9 +90,11 @@ export default {
 }
 
 aside {
-    background: lightblue;
+    // background: lightblue;
+    background: rgb(240, 203, 219);
+    background: radial-gradient(circle, rgba(240, 203, 219, 1) 0%, rgba(194, 214, 238, 1) 100%);
     width: 150px;
-    padding: 16px;
+    padding: 16px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -102,11 +103,21 @@ aside {
 
     >h2 {
         margin-bottom: 4px;
+        padding: 0 16px;
     }
 
     >ol {
         >li {
-            padding: 7px 0;
+            >a {
+                display: block;
+                text-decoration: none;
+                padding: 7px 16px;
+            }
+
+            .router-link-active {
+
+                background: #e8ddf8;
+            }
         }
     }
 
