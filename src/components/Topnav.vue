@@ -1,7 +1,9 @@
 <template>
     <div class="topnav">
-        <router-link to="/">
-            <img class="logo" src="../assets/Sweetquan.svg" />
+        <router-link to="/" class="logo">
+            <svg class="icon">
+                <use xlink:href="#icon-guodong"></use>
+            </svg>
         </router-link>
 
 
@@ -11,12 +13,20 @@
             </li>
 
         </ul>
-        <img class="toggleAside" @click="toggleAside" src="../assets/types.svg" alt="" />
+        <svg v-if="toggleAsideButtonVisible" class="toggleAside" @click="toggleAside">
+            <use xlink:href="#icon-icon"></use>
+        </svg>
     </div>
 </template>
 <script lang="ts">
 import { inject, Ref } from 'vue'
 export default {
+    props: {
+        toggleAsideButtonVisible: {
+            type: Boolean,
+            default: false
+        }
+    },
     setup() {
         const asideVisible = inject<Ref<boolean>>('asideVisible')  //get
         const toggleAside = () => {
@@ -44,16 +54,13 @@ $color: #4e6c60;
     align-items: center;
     color: $color;
 
-    >a {
+    >.logo {
+        max-width: 6em;
         margin-right: auto;
 
-        >.logo {
-            max-width: 6em;
-
+        >svg {
             width: 32px;
             height: 32px;
-
-
         }
     }
 
@@ -70,8 +77,8 @@ $color: #4e6c60;
     }
 
     .toggleAside {
-        width: 24px;
-        height: 24px;
+        width: 32px;
+        height: 32px;
         position: absolute;
         left: 16px;
         top: 50%;
