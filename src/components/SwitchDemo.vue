@@ -7,10 +7,8 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
 import Switch1Demo from './Switch1.demo.vue'
 import Switch2Demo from './Switch2.demo.vue'
-import Prism from 'prismjs'
 import 'prismjs/themes/prism.css'
 import Demo from './Demo.vue'
 
