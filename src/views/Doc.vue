@@ -20,16 +20,16 @@
 
                 <ol>
                     <li>
-                        <router-link to="/doc/switch">Switch 组件</router-link>
+                        <router-link to="/doc/switch">Switch 开关组件</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/button">Button 组件</router-link>
+                        <router-link to="/doc/button">Button 按钮组件</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/dialog">Dialog 组件</router-link>
+                        <router-link to="/doc/dialog">Dialog 弹出层组件</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/tabs">Tabs 组件</router-link>
+                        <router-link to="/doc/tabs">Tabs 标签页组件</router-link>
                     </li>
                 </ol>
             </aside>
@@ -54,6 +54,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$aside-index: 10;
+
 .layout {
     display: flex;
     flex-direction: column;
@@ -93,13 +95,16 @@ aside {
     // background: lightblue;
     background: rgb(240, 203, 219);
     background: radial-gradient(circle, rgba(240, 203, 219, 1) 0%, rgba(194, 214, 238, 1) 100%);
-    width: 150px;
+
+    ;
+    width: 200px;
     padding: 16px 0;
     position: fixed;
     top: 0;
     left: 0;
-    padding-top: 70px;
+    padding-top: 80px;
     height: 100%;
+    z-index: $aside-index;
 
     >h2 {
         margin-bottom: 4px;
@@ -125,5 +130,11 @@ aside {
 
 main {
     overflow: auto;
+
+    @media(min-width: 501px) {
+        margin-left: 50px;
+    }
+
+    margin-top: 10px;
 }
 </style>

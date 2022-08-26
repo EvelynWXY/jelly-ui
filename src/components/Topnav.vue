@@ -49,10 +49,15 @@ $color: #4e6c60;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 20;
     justify-content: center;
     align-items: center;
     color: $color;
+    background: rgb(240, 203, 219);
+    background: radial-gradient(circle,
+            rgba(240, 203, 219, 1) 0%, rgba(194, 214, 238, 1) 100%);
+    // background: transparent;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
 
     >.logo {
         max-width: 6em;

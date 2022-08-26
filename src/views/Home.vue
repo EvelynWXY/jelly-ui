@@ -8,7 +8,7 @@
                 <h2>一个厉害的 UI 框架</h2>
                 <p class="actions">
                     <a href="https://github.com/EvelynWXY/xingzi-ui">GitHub</a>
-                    <router-link to="/doc/get-started">start</router-link>
+                    <router-link to="/doc">start</router-link>
                 </p>
             </div>
         </div>
@@ -61,24 +61,43 @@ $color: #4e6c60;
 
 .topnavAndBanner {
     background: rgb(240, 203, 219);
-    background: radial-gradient(circle, rgba(240, 203, 219, 1) 0%, rgba(194, 214, 238, 1) 100%);
-    // border-bottom-left-radius: 190px 40px;
-    // border-bottom-right-radius: 190px 40px;
-    // border-top-left-radius: 190px 40px;
-    // border-top-right-radius: 190px 40px;
+    background: radial-gradient(circle,
+            rgba(240, 203, 219, 1) 0%, rgba(194, 214, 238, 1) 100%);
     clip-path: ellipse(80% 60% at 50% 40%);
+
+    @media (max-width:500px) {
+        clip-path: ellipse(80% 55% at 50% 40%);
+    }
 }
 
 .features {
     margin: 64px auto;
-    width: 400px;
+    padding: 0 16px;
+
+    @media (max-width:500px) {
+        margin: auto;
+    }
 
     @media (min-width:800px) {
-        width: 800px
+
+        width: 800px;
+
+        >ul {
+            >li {
+                width: 50%;
+            }
+        }
     }
 
     @media (min-width:1200px) {
+
         width: 1200px;
+
+        >ul {
+            >li {
+                width: 33.3333%;
+            }
+        }
     }
 
     >ul {
@@ -86,7 +105,7 @@ $color: #4e6c60;
         flex-wrap: wrap;
 
         >li {
-            width: 400px;
+
             margin: 16px 0;
             display: grid;
             justify-content: start;
