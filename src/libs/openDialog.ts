@@ -6,7 +6,8 @@ export const openDialog = (options) => {
     const div = document.createElement('div') //创建一个 div
     document.body.appendChild(div)  //把 div 放到 body 里
     const close = () => {
-        app.unmount(div)
+        // app.unmount(div)
+        app.unmount()
         div.remove()
     }
     const app = createApp({
