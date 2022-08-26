@@ -5,13 +5,14 @@
         <div class="demo">
             <h2>常规用法</h2>
             <div class="demo-component">
+                <Switch1Demo />
                 <!-- <Switch :value="y" @update:value="y = $event" /> -->
                 <!-- 可简写成 -->
-                <Switch v-model:value="bool" />
+                <!-- <Switch v-model:value="bool" /> -->
                 <!-- 
             监听 input事件 与 context.emit('input', !props.value) 中的 input 对应
             $event 与 第二个参数对应，即是触发这个事件时传的参数
-         -->
+                 -->
             </div>
             <div class="demo-actions">
                 <Button>查看代码</Button>
@@ -24,7 +25,8 @@
         <div class="demo">
             <h2>支持 disabled</h2>
             <div class="demo-component">
-                <Switch v-model:value="bool" />
+                <Switch2Demo />
+                <!-- <Switch v-model:value="bool" /> -->
 
             </div>
             <div class="demo-actions">
@@ -43,8 +45,11 @@
 import { ref } from 'vue'
 import Button from '../libs/Button.vue'
 import Switch from '../libs/Switch.vue'
+import Switch1Demo from '../components/Switch1.demo.vue'
+import Switch2Demo from '../components/Switch2.demo.vue'
+
 export default {
-    components: { Switch, Button },
+    components: { Switch, Button, Switch1Demo, Switch2Demo },
     setup() {
         const bool = ref(false)
         return { bool }
