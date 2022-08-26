@@ -5,7 +5,8 @@
         <div class="demo">
             <h2>常规用法</h2>
             <div class="demo-component">
-                <Switch1Demo />
+                <!-- <Switch1Demo /> -->
+                <component :is="Switch1Demo" />
                 <!-- <Switch :value="y" @update:value="y = $event" /> -->
                 <!-- 可简写成 -->
                 <!-- <Switch v-model:value="bool" /> -->
@@ -25,7 +26,8 @@
         <div class="demo">
             <h2>支持 disabled</h2>
             <div class="demo-component">
-                <Switch2Demo />
+                <!-- <Switch2Demo /> -->
+                <component :is="Switch2Demo" />
                 <!-- <Switch v-model:value="bool" /> -->
 
             </div>
@@ -45,12 +47,12 @@
 import { ref } from 'vue'
 import Button from '../libs/Button.vue'
 import Switch from '../libs/Switch.vue'
-import Switch1Demo from '../components/Switch1.demo.vue'
-import Switch2Demo from '../components/Switch2.demo.vue'
 
+import Switch1Demo from './Switch1.demo.vue'
+import Switch2Demo from './Switch2.demo.vue'
 
 export default {
-    components: { Switch, Button, Switch1Demo, Switch2Demo },
+    components: { Switch, Button },
     setup() {
         const bool = ref(false)
         return { bool, Switch1Demo, Switch2Demo }
