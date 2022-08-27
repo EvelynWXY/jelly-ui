@@ -1,6 +1,7 @@
 <template>
     <div>
-        <button class="xingzi-switch" @click="toggle" :class="{ 'xingzi-checked': value }"><span></span></button>
+        <button class="xingzi-switch" @click="toggle" :disabled="disabled"
+            :class="{ 'xingzi-checked': value }"><span></span></button>
     </div>
 </template>
 
@@ -8,7 +9,11 @@
 import { ref } from 'vue'
 export default {
     props: {
-        value: Boolean
+        value: Boolean,
+        disabled: {
+            type: Boolean,
+            default: false
+        },
     },
     setup(props, context) {
         const toggle = () => {
@@ -70,7 +75,8 @@ $h2: $h - 4px;
             width: $h2 + 4px;
             margin-left: -4px;
         }
-    }
 
+
+    }
 }
 </style>

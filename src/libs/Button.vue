@@ -195,7 +195,7 @@ $radius: 4px;
     &.xingzi-theme-link,
     &.xingzi-theme-text {
         &[disabled] {
-            cursor: not-allowed;
+
             color: $grey;
         }
     }
