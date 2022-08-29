@@ -1,6 +1,10 @@
 {
-  "name": "xingzi-ui-1",
-  "version": "0.0.0",
+  "name": "jelly-ui-1",
+  "version": "0.0.1",
+  "files": [
+    "dist/libs/*"
+  ],
+  "main": "dist/libs/jelly.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
