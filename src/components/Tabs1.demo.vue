@@ -8,8 +8,7 @@
     </Tabs>
 </template>
 <script lang="ts">
-import Tabs from '../libs/Tabs.vue'
-import Tab from '../libs/Tab.vue'
+import { Tabs, Tab } from '../libs/index'
 import { ref } from 'vue'
 export default {
     components: { Tabs, Tab },

@@ -4,7 +4,7 @@
 </template>
 <script lang="ts">
 import { ref } from 'vue'
-import Switch from '../libs/Switch.vue'
+import { Switch } from '../libs/index'
 export default {
     components: { Switch },
     setup() {
